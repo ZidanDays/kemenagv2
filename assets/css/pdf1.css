@@ -1,0 +1,87 @@
+.isi_surat {
+  text-align: justify;
+}
+.text-with-underline {
+  text-decoration: underline;
+}
+.ttd {
+  text-align: right;
+  margin-right: 10px;
+}
+.ttd_foto {
+  border-radius: 20px;
+  width: 80px;
+}
+.ttd_nama {
+  margin-right: 1rem;
+}
+.biodata {
+  margin-left: 3rem;
+
+  border-spacing: 2px;
+}
+
+.biodata {
+  display: flex;
+  flex-direction: column;
+}
+
+.biodata-item {
+  margin-bottom: 10px;
+}
+
+.biodata-label {
+  font-weight: bold;
+}
+
+.biodata-value {
+  margin-left: 10px;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col {
+  flex: 1;
+}
+
+.ttd_kiri {
+  text-align: left;
+}
+
+.ttd_kanan {
+  text-align: right;
+}
+/* tabel */
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.custom-table td,
+.custom-table th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+.list {
+  list-style-type: none;
+}
+.center {
+  text-align: center !important;
+}
+
+.italic {
+  font-style: italic;
+}
+.font-weight-bold {
+  font-weight: bold;
+}
+
+/*style UI/UX */
+.logo {
+  width: 90%;
+  margin-left: 10px;
+}

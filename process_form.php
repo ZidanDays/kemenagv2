@@ -136,8 +136,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-3 font-weight-bold">SURAT TUGAS <br> Nomor :
             <?php echo $nomor_surat; ?></p>
 
@@ -222,8 +222,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-3"><b>SURAT PERNYATAAN <br> PEMILIHAN SPESIALISASI</b></p>
 
         <p style="text-align: justify;">
@@ -362,8 +362,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-3"><b> SURAT PERNYATAAN <br>KUNJUNGAN KEPADA TOKOH MASYARAKAT & PEJABAT
                 PEMERINTAH</b></p>
 
@@ -517,8 +517,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-3"><b>SURAT PERNYATAAN <br>
                 PEMBENTUKKAN KELOMPOK BINAAN</b></p>
 
@@ -659,8 +659,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-3"><b>RENCANA KERJA BULANAN</b></p>
 
         <p style="text-align: justify;">
@@ -920,8 +920,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-3"><b>LAPORAN MINGGUAN KE-1 PENYULUH AGAMA</b></p>
 
         <p style="text-align: justify;">
@@ -1064,8 +1064,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-3"><b>LAPORAN MINGGUAN KE-2 PENYULUH AGAMA</b></p>
 
         <p style="text-align: justify;">
@@ -1209,8 +1209,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-3"><b>LAPORAN MINGGUAN KE-3 PENYULUH AGAMA</b></p>
 
         <p style="text-align: justify;">
@@ -1355,8 +1355,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-4"><b>LAPORAN MINGGUAN KE-4 PENYULUH AGAMA</b></p>
 
         <p style="text-align: justify;">
@@ -1493,8 +1493,8 @@ $user_id = $_SESSION['user_id'];
                 </td>
             </tr>
         </table>
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
-        <hr style="border: none; border-top: 20px solid black; margin: 2px auto" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
+        <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <p style="text-align: center;" class="mt-3"><b>SURAT PERNYATAAN <br> MELAKUKAN KEGIATAN PENYULUHAN AGAMA
                 ISLAM</b></p>
 

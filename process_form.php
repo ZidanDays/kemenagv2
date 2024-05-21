@@ -20,9 +20,16 @@ $user_id = $_SESSION['user_id'];
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Surat Tugas</title>
+    <style>
+    .page-break {
+        page-break-after: always;
+    }
+    </style>
 </head>
 
 <body>
+    <!-- <a href="surat-tugas.php" class="btn">Go to Surat Tugas</a> -->
+    <a href="test-print.php" class="btn">Go to Surat Tugas</a>
     <?php
     // Inisialisasi variabel dengan nilai default
     $wilayah_penugasan = $alamat_wilayah_penugasan = $nomor_surat = $nama = $tempat_tanggal_lahir = $pendidikan_terakhir = $noreg = $bidang_tugas = $alamat = $no_keputusan = $bimbingan_penyuluhan = $sasaran_tugas = $uraian_tugas = $tempat = $tgl_bl_thn = $upload_ttd = $nama_ttd_bersangkuta = $nip = $nama_pernyataan1 = $tempat_tanggal_lahir_pernyataan1 = $pendidikan_terakhir_pernyataan1 = $noreg_pernyataan1 = $bidang_tugas_pernyataan1 = $alamat_pernyataan1 = $memilih_spesialisasi = $penyuluh_agama = $upload_ttd_Spesialisasi1 = "";
@@ -116,6 +123,7 @@ $user_id = $_SESSION['user_id'];
     // Berikut adalah konten HTML untuk halaman hasil:
 
     ?>
+    <div class="page-break"></div>
     <div class="container">
         <!-- surat tugas -->
         <table style="width: 100%">
@@ -202,7 +210,7 @@ $user_id = $_SESSION['user_id'];
             </p>
         </div>
 
-
+        <div class="page-break"></div>
         <!-- SURAT PERNYATAAN PEMILIHAN SPESIALISASI -->
         <table style="width: 100%">
             <tr>
@@ -343,7 +351,7 @@ $user_id = $_SESSION['user_id'];
         // Setelah Anda memproses data dan upload file, Anda dapat menampilkan pesan atau melakukan operasi lainnya
 
         ?>
-
+        <div class="page-break"></div>
         <table style="width: 100%">
             <tr>
                 <td style="text-align: left; width: 10%">
@@ -499,6 +507,7 @@ $user_id = $_SESSION['user_id'];
             }
         }
         ?>
+        <div class="page-break"></div>
         <table style="width: 100%">
             <tr>
                 <td style="text-align: left; width: 10%">
@@ -641,6 +650,7 @@ $user_id = $_SESSION['user_id'];
             }
         }
         ?>
+        <div class="page-break"></div>
         <table style="width: 100%">
             <tr>
                 <td style="text-align: left; width: 10%">
@@ -782,6 +792,7 @@ $user_id = $_SESSION['user_id'];
             $tanggal_penyuluhan = htmlspecialchars($_POST['tanggal_penyuluhan']);
             $nama_ketua_kelompok = htmlspecialchars($_POST['nama_ketua_kelompok']);
         ?>
+        <div class="page-break"></div>
         <p style="text-align: center;"><b>DAFTAR HADIR PENYULUHAN</b></p>
 
         <p style="text-align: justify;">
@@ -902,6 +913,7 @@ $user_id = $_SESSION['user_id'];
             move_uploaded_file($_FILES['upload_ttd_laporan_mingguan']['tmp_name'], $upload_ttd_laporan_mingguan);
         }
         ?>
+        <div class="page-break"></div>
         <table style="width: 100%">
             <tr>
                 <td style="text-align: left; width: 10%">
@@ -1046,6 +1058,7 @@ $user_id = $_SESSION['user_id'];
             move_uploaded_file($_FILES['upload_ttd_laporan_mingguan2']['tmp_name'], $upload_ttd_laporan_mingguan2);
         }
         ?>
+        <div class="page-break"></div>
         <table style="width: 100%">
             <tr>
                 <td style="text-align: left; width: 10%">
@@ -1191,6 +1204,7 @@ $user_id = $_SESSION['user_id'];
             move_uploaded_file($_FILES['upload_ttd_laporan_mingguan3']['tmp_name'], $upload_ttd_laporan_mingguan3);
         }
         ?>
+        <div class="page-break"></div>
         <table style="width: 100%">
             <tr>
                 <td style="text-align: left; width: 10%">
@@ -1337,6 +1351,7 @@ $user_id = $_SESSION['user_id'];
             move_uploaded_file($_FILES['upload_ttd_laporan_mingguan4']['tmp_name'], $upload_ttd_laporan_mingguan4);
         }
         ?>
+        <div class="page-break"></div>
         <table style="width: 100%">
             <tr>
                 <td style="text-align: left; width: 10%">
@@ -1475,6 +1490,7 @@ $user_id = $_SESSION['user_id'];
             move_uploaded_file($_FILES['upload_ttd_penyuluh_agama_islam']['tmp_name'], $upload_ttd_penyuluh_agama_islam);
         }
         ?>
+        <div class="page-break"></div>
         <table style="width: 100%">
             <tr>
                 <td style="text-align: left; width: 10%">

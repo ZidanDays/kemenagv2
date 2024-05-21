@@ -24,12 +24,36 @@ $user_id = $_SESSION['user_id'];
     .page-break {
         page-break-after: always;
     }
+
+    .signature-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+    }
+
+    .signature-block {
+        width: 45%;
+        text-align: center;
+    }
+
+    .signature {
+        display: block;
+        margin-top: 50px;
+    }
+
+    .left-signature {
+        text-align: left;
+    }
+
+    .right-signature {
+        text-align: right;
+    }
     </style>
 </head>
 
 <body>
     <!-- <a href="surat-tugas.php" class="btn">Go to Surat Tugas</a> -->
-    <a href="test-print.php" class="btn">Go to Surat Tugas</a>
+    <!-- <a href="test-print.php" class="btn">Go to Surat Tugas</a> -->
     <?php
     // Inisialisasi variabel dengan nilai default
     $wilayah_penugasan = $alamat_wilayah_penugasan = $nomor_surat = $nama = $tempat_tanggal_lahir = $pendidikan_terakhir = $noreg = $bidang_tugas = $alamat = $no_keputusan = $bimbingan_penyuluhan = $sasaran_tugas = $uraian_tugas = $tempat = $tgl_bl_thn = $upload_ttd = $nama_ttd_bersangkuta = $nip = $nama_pernyataan1 = $tempat_tanggal_lahir_pernyataan1 = $pendidikan_terakhir_pernyataan1 = $noreg_pernyataan1 = $bidang_tugas_pernyataan1 = $alamat_pernyataan1 = $memilih_spesialisasi = $penyuluh_agama = $upload_ttd_Spesialisasi1 = "";
@@ -123,7 +147,7 @@ $user_id = $_SESSION['user_id'];
     // Berikut adalah konten HTML untuk halaman hasil:
 
     ?>
-    <div class="page-break"></div>
+    <!-- <div class="page-break"></div> -->
     <div class="container">
         <!-- surat tugas -->
         <table style="width: 100%">
@@ -425,8 +449,8 @@ $user_id = $_SESSION['user_id'];
         <div class="ttd">
             <p class="tanggal"> <?php echo $tempat_pernyataan2; ?> , <?php echo $tanggal_pernyataan2; ?></p>
         </div>
-        <div class="row text-center">
-            <div class="col-md-6">
+        <div class="signature-container">
+            <div class="signature-block left-signature">
                 <div class="ttd_kiri">
                     <p class="tanggal">Mengetahui <br> <?php echo $mengetahui_pernyataan2; ?></p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_pernyataan2; ?>" alt="">
@@ -435,7 +459,7 @@ $user_id = $_SESSION['user_id'];
                     <p class="ttd_nama"><?php echo $nip_mengetahui_pernyataan2; ?></p>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="signature-block right-signature">
                 <div class="ttd_kanan"> Penyuluh Agama <?php echo $agama_pernyataan2; ?> Non PNS <br> Yang membuat
                     pernyataan</p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_pernyataan_kanan; ?>" alt="">
@@ -581,8 +605,8 @@ $user_id = $_SESSION['user_id'];
         <div class="ttd mt-4">
             <p class="tanggal"> <?php echo $tempat_kelompok_bina; ?> , <?php echo $tanggal_kelompok_bina; ?></p>
         </div>
-        <div class="row text-center">
-            <div class="col-md-6">
+        <div class="signature-container">
+            <div class="signature-block left-signature">
                 <div class="ttd_kiri">
                     <p class="tanggal">Mengetahui <br> <?php echo $mengetahui_kelompok_bina; ?></p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_kelompok_bina; ?>" alt="">
@@ -591,7 +615,7 @@ $user_id = $_SESSION['user_id'];
                     <p class="ttd_nama"><?php echo $nip_yang_mengetahui; ?></p>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="signature-block right-signature">
                 <div class="ttd_kanan"> Penyuluh Agama <?php echo $jabatan_pernyataan3; ?> Non PNS <br> Yang membuat
                     pernyataan</p>
                     <img class="ttd_foto" src=" <?php echo $upload_ttd_bina_kanan; ?>" alt="">
@@ -746,8 +770,8 @@ $user_id = $_SESSION['user_id'];
         <div class="ttd mt-4">
             <p class="tanggal"> <?php echo $tempat_pai; ?> , <?php echo $tanggal_pai; ?> </p>
         </div>
-        <div class="row text-center">
-            <div class="col-md-6">
+        <div class="signature-container">
+            <div class="signature-block left-signature">
                 <div class="ttd_kiri">
                     <p class="tanggal">Mengetahui <br> <?php echo $mengetahui_pimpinan; ?> </p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_pimpinan; ?> " alt="">
@@ -756,7 +780,7 @@ $user_id = $_SESSION['user_id'];
                     <p class="ttd_nama"><?php echo $nip_pimpinan; ?> </p>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="signature-block right-signature">
                 <div class="ttd_kanan"> Penyuluh Agama <?php echo $penyuluh_agama_pai; ?> Non PNS <br> Yang membuat
                     pernyataan</p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_pai; ?> " alt="">
@@ -856,8 +880,8 @@ $user_id = $_SESSION['user_id'];
         <div class="ttd mt-4">
             <p class="tanggal"> <?php echo $tempat_dilaksanakan_penyuluhan; ?> ,<?php echo $tanggal_penyuluhan; ?></p>
         </div>
-        <div class="row text-center">
-            <div class="col-md-6">
+        <div class="signature-container">
+            <div class="signature-block left-signature">
                 <div class="ttd_kiri">
                     <p class="tanggal">Mengetahui <br> Penyuluh Agama <?php echo $mengetahui_penyuluh_agama; ?> Non PNS
                     </p>
@@ -867,7 +891,7 @@ $user_id = $_SESSION['user_id'];
 
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="signature-block right-signature">
                 <div class="ttd_kanan"> Ketua Kelompok <br> Penyelenggara</p>
                     <img class="ttd_foto" src="<?php echo $ttd_ketua_path; ?>" alt="">
                     <p class=" ttd_nama" style="margin-bottom: -7px;"><?php echo $nama_ketua_kelompok; ?></p>
@@ -1008,8 +1032,8 @@ $user_id = $_SESSION['user_id'];
         <div class="ttd mt-4">
             <p class="tanggal"> <?php echo $tempat_lapporan_mingguan; ?> , <?php echo $tanggal_laporan_mingguan; ?></p>
         </div>
-        <div class="row text-center">
-            <div class="col-md-6">
+        <div class="signature-container">
+            <div class="signature-block left-signature">
                 <div class="ttd_kiri">
                     <p class="tanggal">Mengetahui <br> <?php echo $mengetahui_laporan_mingguan; ?></p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_mingguan; ?>" alt="">
@@ -1018,7 +1042,7 @@ $user_id = $_SESSION['user_id'];
                     <p class="ttd_nama"><?php echo $nip_mengetahui_mingguan; ?></p>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="signature-block right-signature">
                 <div class="ttd_kanan"> Penyuluh Agama Non PNS <br> Yang membuat pernyataan</p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_laporan_mingguan; ?>" alt="">
                     <p class=" ttd_nama" style="margin-bottom: -7px;"><?php echo $nama_ttd_laporan_mingguan; ?></p>
@@ -1154,8 +1178,8 @@ $user_id = $_SESSION['user_id'];
             <p class="tanggal"> <?php echo $tempat_lapporan_mingguan2; ?> , <?php echo $tanggal_laporan_mingguan2; ?>
             </p>
         </div>
-        <div class="row text-center">
-            <div class="col-md-6">
+        <div class="signature-container">
+            <div class="signature-block left-signature">
                 <div class="ttd_kiri">
                     <p class="tanggal">Mengetahui <br> <?php echo $mengetahui_laporan_mingguan2; ?></p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_mingguan2; ?>" alt="">
@@ -1164,7 +1188,7 @@ $user_id = $_SESSION['user_id'];
                     <p class="ttd_nama"><?php echo $nip_mengetahui_mingguan2; ?></p>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="signature-block right-signature">
                 <div class="ttd_kanan"> Penyuluh Agama Non PNS <br> Yang membuat pernyataan</p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_laporan_mingguan2; ?>" alt="">
                     <p class=" ttd_nama" style="margin-bottom: -7px;"><?php echo $nama_ttd_laporan_mingguan2; ?></p>
@@ -1300,8 +1324,8 @@ $user_id = $_SESSION['user_id'];
             <p class="tanggal"> <?php echo $tempat_lapporan_mingguan3; ?> , <?php echo $tanggal_laporan_mingguan3; ?>
             </p>
         </div>
-        <div class="row text-center">
-            <div class="col-md-6">
+        <div class="signature-container">
+            <div class="signature-block left-signature">
                 <div class="ttd_kiri">
                     <p class="tanggal">Mengetahui <br> <?php echo $mengetahui_laporan_mingguan3; ?></p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_mingguan3; ?>" alt="">
@@ -1310,7 +1334,7 @@ $user_id = $_SESSION['user_id'];
                     <p class="ttd_nama"><?php echo $nip_mengetahui_mingguan3; ?></p>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="signature-block right-signature">
                 <div class="ttd_kanan"> Penyuluh Agama Non PNS <br> Yang membuat pernyataan</p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_laporan_mingguan3; ?>" alt="">
                     <p class=" ttd_nama" style="margin-bottom: -7px;"><?php echo $nama_ttd_laporan_mingguan3; ?></p>
@@ -1447,8 +1471,8 @@ $user_id = $_SESSION['user_id'];
             <p class="tanggal"> <?php echo $tempat_lapporan_mingguan4; ?> , <?php echo $tanggal_laporan_mingguan4; ?>
             </p>
         </div>
-        <div class="row text-center">
-            <div class="col-md-6">
+        <div class="signature-container">
+            <div class="signature-block left-signature">
                 <div class="ttd_kiri">
                     <p class="tanggal">Mengetahui <br> <?php echo $mengetahui_laporan_mingguan4; ?></p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_mingguan4; ?>" alt="">
@@ -1457,7 +1481,7 @@ $user_id = $_SESSION['user_id'];
                     <p class="ttd_nama"><?php echo $nip_mengetahui_mingguan4; ?></p>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="signature-block right-signature">
                 <div class="ttd_kanan"> Penyuluh Agama Non PNS <br> Yang membuat pernyataan</p>
                     <img class="ttd_foto" src="<?php echo $upload_ttd_laporan_mingguan4; ?>" alt="">
                     <p class=" ttd_nama" style="margin-bottom: -7px;"><?php echo $nama_ttd_laporan_mingguan4; ?></p>

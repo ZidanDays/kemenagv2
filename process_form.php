@@ -17,6 +17,7 @@ $user_id = $_SESSION['user_id'];
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Surat Tugas</title>
@@ -147,7 +148,11 @@ $user_id = $_SESSION['user_id'];
     // Berikut adalah konten HTML untuk halaman hasil:
 
     ?>
-    <!-- <div class="page-break"></div> -->
+
+    <div>
+        <img src="upload/COVER LAPORAN.jpg" width="100%" class="text-center" alt="">
+    </div>
+    <div class="page-break"></div>
     <div class="container">
         <!-- surat tugas -->
         <table style="width: 100%">
@@ -219,6 +224,10 @@ $user_id = $_SESSION['user_id'];
             <P>2. Dst.</P>
             <p>Demikian Surat Tugas ini kami buat untuk dilaksanakan sebagaimana mestinya.</p>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="ttd">
             <p class="tanggal"> <?php echo $tempat; ?>, <?php echo $tgl_bl_thn; ?> </p>
             <?php if (!empty($upload_ttd)) : ?>
@@ -446,6 +455,13 @@ $user_id = $_SESSION['user_id'];
             </ol>
             <p>Demikian Surat Tugas ini kami buat untuk dilaksanakan sebagaimana mestinya.</p>
         </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
         <div class="ttd">
             <p class="tanggal"> <?php echo $tempat_pernyataan2; ?> , <?php echo $tanggal_pernyataan2; ?></p>
         </div>
@@ -1548,18 +1564,18 @@ $user_id = $_SESSION['user_id'];
             </div>
             <div class="biodata-item">
                 <span class="biodata-label">NIP</span>
-                <span style="margin-left: 9.2rem;"> :</span>
+                <span style="margin-left: 11rem;"> :</span>
                 <span class="biodata-value">Penyuluh Agama <?php echo $nip_penyuluh_agama_islam; ?> Non PNS</span>
             </div>
 
             <div class="biodata-item">
                 <span class="biodata-label">Pangkat/Golongan</span>
-                <span style="margin-left: 1.4rem;"> :</span>
+                <span style="margin-left: 3.8rem;"> :</span>
                 <span class="biodata-value"><?php echo $pangkat_penyuluh_agama_islam; ?></span>
             </div>
             <div class="biodata-item">
                 <span class="biodata-label">Jabatan </span>
-                <span style="margin-left: 6rem;"> :</span>
+                <span style="margin-left: 9rem;"> :</span>
                 <span class="biodata-value"><?php echo $jabatan_penyuluh_agama_islam; ?></span>
             </div>
         </div>
@@ -1609,6 +1625,50 @@ $user_id = $_SESSION['user_id'];
             <p class="ttd_nama"><?php echo $nip_penyuluh_agama_islam; ?></p>
         </div>
         <!--  Akhir SURAT PERNYATAAN MELAKUKAN KEGIATAN PENYULUHAN AGAMA ISLAM-->
+
+        <!-- DOKUMENTASI KEGIATAN -->
+        <?php
+// Folder tujuan upload
+$uploadDir = 'upload/';
+
+// Membuat folder jika belum ada
+if (!is_dir($uploadDir)) {
+    mkdir($uploadDir, 0777, true);
+}
+
+$files = ['kegiatan1', 'kegiatan2', 'kegiatan3', 'kegiatan4', 'kegiatan5', 'kegiatan6', 'kegiatan7', 'kegiatan8'];
+$uploadedFiles = [];
+
+foreach ($files as $file) {
+    if (isset($_FILES[$file]) && $_FILES[$file]['error'] == UPLOAD_ERR_OK) {
+        $fileTmpPath = $_FILES[$file]['tmp_name'];
+        $fileName = $_FILES[$file]['name'];
+        $fileSize = $_FILES[$file]['size'];
+        $fileType = $_FILES[$file]['type'];
+        $fileNameCmps = explode(".", $fileName);
+        $fileExtension = strtolower(end($fileNameCmps));
+
+        // Tentukan nama file yang unik
+        $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+
+        $dest_path = $uploadDir . $newFileName;
+
+        if(move_uploaded_file($fileTmpPath, $dest_path)) {
+            $uploadedFiles[$file] = $dest_path;
+        } else {
+            echo "There was an error moving the uploaded file.";
+        }
+    }
+}
+?>
+        <div class="page-break"> </div>
+        <p style="text-align: center;" class="mt-3 mb-5"><b>DOKUMENTASI KEGIATAN</b></p>
+        <div class="mx-auto max-w-4xl columns-2 gap-4">
+            <?php foreach ($uploadedFiles as $file): ?>
+            <img class="mb-4" src="<?php echo $file; ?>" alt="<?php echo basename($file); ?>">
+            <?php endforeach; ?>
+        </div>
+
 
 </body>
 

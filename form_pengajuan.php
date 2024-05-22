@@ -87,8 +87,7 @@
                                         <div class="col-sm-6">
                                             <div class="form-group">
                                                 <label for="remarks">Perihal Pengajuan Surat:</label>
-                                                <textarea class="form-control" id="remarks" name="remarks"
-                                                    rows="4"></textarea>
+                                                <input class="form-control" id="remarks" name="remarks">
                                             </div>
                                         </div>
 
@@ -1547,81 +1546,79 @@
                                             </div>
                                         </div>
                                         <hr style="border: none; border-bottom: 1px solid black; margin: 20px 0;">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- akhir SURAT PERNYATAAN MELAKUKAN KEGIATAN PENYULUHAN AGAMA ISLAM-->
+
+
+
+                            <!-- DOKUMENTASI KEGIATAN-->
+                            <div id="form12">
+
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>DOKUMENTASI KEGIATAN</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <!-- <form> -->
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="kegiatan1">Upload Foto Kegiatan:</label>
+                                                    <input type="file" class="form-control-file" id="kegiatan1"
+                                                        name="kegiatan1" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="kegiatan2">Upload Foto Kegiatan:</label>
+                                                    <input type="file" class="form-control-file" id="kegiatan2"
+                                                        name="kegiatan2" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="kegiatan3">Upload Foto Kegiatan:</label>
+                                                    <input type="file" class="form-control-file" id="kegiatan3"
+                                                        name="kegiatan3" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="kegiatan4">Upload Foto Kegiatan:</label>
+                                                    <input type="file" class="form-control-file" id="kegiatan4"
+                                                        name="kegiatan4" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label for="kegiatan5">Upload Foto Kegiatan:</label>
+                                                    <input type="file" class="form-control-file" id="kegiatan5"
+                                                        name="kegiatan5" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="kegiatan6">Upload Foto Kegiatan:</label>
+                                                    <input type="file" class="form-control-file" id="kegiatan6"
+                                                        name="kegiatan6" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="kegiatan7">Upload Foto Kegiatan:</label>
+                                                    <input type="file" class="form-control-file" id="kegiatan7"
+                                                        name="kegiatan7" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="kegiatan8">Upload Foto Kegiatan:</label>
+                                                    <input type="file" class="form-control-file" id="kegiatan8"
+                                                        name="kegiatan8" required>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <hr style="border: none; border-bottom: 1px solid black; margin: 20px 0;">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
             </form>
         </div>
-        <!-- akhir SURAT PERNYATAAN MELAKUKAN KEGIATAN PENYULUHAN AGAMA ISLAM-->
 
 
-
-        <!-- DOKUMENTASI KEGIATAN-->
-        <div id="form12" style="display:none;">
-            <form id="form-pernyataan">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>DOKUMENTASI KEGIATAN</h5>
-                    </div>
-                    <div class="card-body">
-                        <!-- <form> -->
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="upload_ttd">Upload Foto Kegiatan:</label>
-                                    <input type="file" class="form-control-file" id="upload_ttd" name="upload_ttd"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="upload_ttd">Upload Foto Kegiatan:</label>
-                                    <input type="file" class="form-control-file" id="upload_ttd" name="upload_ttd"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="upload_ttd">Upload Foto Kegiatan:</label>
-                                    <input type="file" class="form-control-file" id="upload_ttd" name="upload_ttd"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="upload_ttd">Upload Foto Kegiatan:</label>
-                                    <input type="file" class="form-control-file" id="upload_ttd" name="upload_ttd"
-                                        required>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label for="upload_ttd">Upload Foto Kegiatan:</label>
-                                    <input type="file" class="form-control-file" id="upload_ttd" name="upload_ttd"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="upload_ttd">Upload Foto Kegiatan:</label>
-                                    <input type="file" class="form-control-file" id="upload_ttd" name="upload_ttd"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="upload_ttd">Upload Foto Kegiatan:</label>
-                                    <input type="file" class="form-control-file" id="upload_ttd" name="upload_ttd"
-                                        required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="upload_ttd">Upload Foto Kegiatan:</label>
-                                    <input type="file" class="form-control-file" id="upload_ttd" name="upload_ttd"
-                                        required>
-                                </div>
-
-                            </div>
-                        </div>
-                        <hr style="border: none; border-bottom: 1px solid black; margin: 20px 0;">
-                        <button type="button" class="btn btn-primary" onclick="goToForm1()">Kembali</button>
-                        <!-- <button type="button" class="btn btn-primary" onclick="nextForm()">Lanjut</button> -->
-                        <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-
-        </div>
-        </div>
-        </form>
-        </div>
         <!-- akhir DOKUMENTASI KEGIATAN-->
 
         </div>

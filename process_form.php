@@ -12,16 +12,167 @@ $user_id = $_SESSION['user_id'];
 <head>
     <meta charset="UTF-8" />
     <!-- link css -->
-    <link rel="stylesheet" href="assets/css/pdf1.css">
+    <!-- <link rel="stylesheet" href="assets/css/pdf1.css"> -->
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Surat Tugas</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <!-- <link rel="assets/css/pdfdonecss.css" href=""> -->
     <style>
+    .isi_surat {
+        text-align: justify;
+    }
+
+    .text-with-underline {
+        text-decoration: underline;
+    }
+
+    .ttd {
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .ttd_foto {
+        border-radius: 20px;
+        width: 80px;
+    }
+
+    .ttd_nama {
+        margin-right: 1rem;
+    }
+
+    .biodata {
+        margin-left: 3rem;
+    }
+
+    .biodata-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .biodata-label,
+    .biodata-colon,
+    .biodata-value {
+        padding: 5px 10px;
+    }
+
+    .biodata-label {
+        font-weight: bold;
+        width: 200px;
+        /* Adjust the width as needed */
+        text-align: left;
+    }
+
+    .biodata-colon {
+        width: 20px;
+        /* Adjust the width as needed */
+        text-align: center;
+    }
+
+    .biodata-value {
+        text-align: left;
+    }
+
+    .biodata {
+        margin-left: 3rem;
+
+        border-spacing: 2px;
+    }
+
+    .biodata {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .biodata-item {
+        margin-bottom: 10px;
+    }
+
+    .biodata-label {
+        font-weight: bold;
+    }
+
+    .biodata-value {
+        margin-left: 10px;
+    }
+
+    .biodata {
+        margin-left: 3rem;
+        border-spacing: 2px;
+    }
+
+    .biodata-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .biodata-label {
+        font-weight: bold;
+        width: 200px;
+        /* Adjust the width as needed */
+    }
+
+    .biodata-value {
+        padding-left: 10px;
+    }
+
+    .biodata-table td {
+        padding: 5px 10px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .col {
+        flex: 1;
+    }
+
+    .ttd_kiri {
+        text-align: left;
+    }
+
+    .ttd_kanan {
+        text-align: right;
+    }
+
+    /* tabel */
+    .custom-table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    .custom-table td,
+    .custom-table th {
+        border: 1px solid #000000;
+        text-align: left;
+        padding: 8px;
+    }
+
+    .list {
+        list-style-type: none;
+    }
+
+    .center {
+        text-align: center !important;
+    }
+
+    .italic {
+        font-style: italic;
+    }
+
+    .font-weight-bold {
+        font-weight: bold;
+    }
+
+    /*style UI/UX */
+    .logo {
+        width: 90%;
+        margin-left: 10px;
+    }
+
     .page-break {
         page-break-after: always;
     }
@@ -49,7 +200,117 @@ $user_id = $_SESSION['user_id'];
     .right-signature {
         text-align: right;
     }
+
+    /* cover */
+    .container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        /* Atur sesuai kebutuhan */
+        margin: auto;
+        text-align: center;
+    }
+
+    .background-image {
+        background-image: url("upload/COVER LAPORAN.jpg");
+        background-size: cover;
+
+        width: 100%;
+        height: 900px;
+        /* Atur sesuai kebutuhan */
+        opacity: 10;
+        /* Opasitas gambar latar belakang */
+    }
+
+    .text-overlay {
+        position: absolute;
+        top: 20%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-family: "Times New Roman", Times, serif;
+        /* Warna teks */
+        font-size: 5.5em;
+        /* Ukuran font teks */
+        font-weight: black;
+        /* Ketebalan font teks */
+        z-index: 1;
+        padding: 20px;
+        /* Latar belakang semi-transparan untuk teks */
+    }
+
+    .text-overlay2 {
+        position: absolute;
+        top: 75%;
+        left: 77%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 1.5em;
+        font-family: "Times New Roman", Times, serif;
+        font-weight: normal;
+        /* Mengganti 'white' menjadi 'normal' */
+        z-index: 1;
+        padding: 20px;
+        white-space: nowrap;
+        /* Mencegah teks menjadi baris baru */
+        overflow: hidden;
+        /* Opsional, untuk menangani teks yang terlalu panjang */
+        text-overflow: ellipsis;
+        /* Opsional, menambahkan ellipsis (...) pada teks yang terpotong */
+    }
+
+    .text-overlay3 {
+        position: absolute;
+        top: 81%;
+        left: 77%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-family: "Times New Roman", Times, serif;
+        font-size: 1.5em;
+        font-weight: normal;
+        /* Mengganti 'white' menjadi 'normal' */
+        z-index: 1;
+        padding: 20px;
+        white-space: nowrap;
+        /* Mencegah teks menjadi baris baru */
+        overflow: hidden;
+        /* Opsional, untuk menangani teks yang terlalu panjang */
+        text-overflow: ellipsis;
+        /* Opsional, menambahkan ellipsis (...) pada teks yang terpotong */
+    }
+
+    /* end cover */
+
+
+
+    /* CSS untuk gaya biodata */
+    .biodata {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .biodata-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .biodata-label {
+        flex: 1;
+        font-weight: bold;
+    }
+
+    .biodata-colon {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .biodata-value {
+        flex: 3;
+    }
     </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surat Tugas</title>
 </head>
 
 <body>
@@ -81,6 +342,9 @@ $user_id = $_SESSION['user_id'];
             $nama_ttd_bersangkuta = htmlspecialchars($_POST['nama_ttd_bersangkuta']);
             $nip = htmlspecialchars($_POST['nip']);
             $remarks = $_POST['remarks'];
+            $satunama_pengajuan_surat = $_POST['1nama_pengajuan_surat'];
+            $satutahun_pengajuan_surat = $_POST['1tahun_pengajuan_surat'];
+            $satuwilayah_pengajuan_surat = $_POST['1wilayah_pengajuan_surat'];
 
             $sql = "INSERT INTO surat_requests (user_id, status, remarks) VALUES (?, 'downloaded', ?)";
             $stmt = $conn->prepare($sql);
@@ -149,8 +413,11 @@ $user_id = $_SESSION['user_id'];
 
     ?>
 
-    <div>
+    <div class="background-image">
         <img src="upload/COVER LAPORAN.jpg" width="100%" class="text-center" alt="">
+        <h1 class="text-overlay"><?php echo $satutahun_pengajuan_surat; ?></h1>
+        <h1 class="text-overlay2"><?php echo $satunama_pengajuan_surat; ?></h1>
+        <h1 class="text-overlay3"><?php echo $satuwilayah_pengajuan_surat; ?></h1>
     </div>
     <div class="page-break"></div>
     <div class="container">
@@ -183,37 +450,41 @@ $user_id = $_SESSION['user_id'];
 
         <p style="text-align: justify;">
         <div class="biodata">
-            <div class="biodata-item">
-                <span class="biodata-label">Nama </span>
-                <span style="margin-left: 11rem;"> :</span>
-                <span class="biodata-value"><?php echo $nama; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Tempat tanggal lahir </span>
-                <span style="margin-left: 4rem;"> :</span>
-                <span class="biodata-value"> <?php echo $tempat_tanggal_lahir; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Pendidikan Terakhir </span>
-                <span style="margin-left: 4.3rem;"> :</span>
-                <span class="biodata-value"><?php echo $pendidikan_terakhir; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">No. Reg </span>
-                <span style="margin-left: 10rem;"> :</span>
-                <span class="biodata-value"><?php echo $noreg; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Bidang tugas / spesialisasi </span>
-                <span style="margin-left: 1.5rem;"> :</span>
-                <span class="biodata-value"><?php echo $bidang_tugas; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Alamat </span>
-                <span style="margin-left: 10.5rem;"> :</span>
-                <span class="biodata-value"><?php echo $alamat; ?></span>
-            </div>
+            <table class="biodata-table">
+                <tr>
+                    <td class="biodata-label">Nama</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $nama; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Tempat tanggal lahir</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $tempat_tanggal_lahir; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Pendidikan Terakhir</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $pendidikan_terakhir; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">No. Reg</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $noreg; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Bidang tugas / spesialisasi</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $bidang_tugas; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Alamat</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $alamat; ?></td>
+                </tr>
+            </table>
         </div>
+
+
         </p>
         <div class="isi_surat">
             <p>Sesuai surat keputusan Kepala Kantor Kementerian Agama Kabupaten Minahasa Nomor
@@ -225,24 +496,38 @@ $user_id = $_SESSION['user_id'];
             <p>Demikian Surat Tugas ini kami buat untuk dilaksanakan sebagaimana mestinya.</p>
         </div>
         <br>
-        <br>
-        <br>
-        <br>
-        <div class="ttd">
-            <p class="tanggal"> <?php echo $tempat; ?>, <?php echo $tgl_bl_thn; ?> </p>
-            <?php if (!empty($upload_ttd)) : ?>
-            <img class="ttd_foto" src="<?php echo $upload_ttd; ?>" alt="Foto Tanda Tangan">
-            <?php endif; ?>
-            <p class="text-with-underline ttd_nama" style="margin-bottom: -7px;"><?php echo $nama_ttd_bersangkuta; ?>
-            </p>
-            <p class="ttd_nama"><?php echo  $nip; ?></p>
+        <div class="signature-container">
+            <div class="signature-block left-signature">
+                <p class="tanggal"> <?php echo $tempat; ?>, <?php echo $tgl_bl_thn; ?> </p>
+                <?php if (!empty($upload_ttd)) : ?>
+                <img class="ttd_foto" src="<?php echo $upload_ttd; ?>" alt="Foto Tanda Tangan">
+                <?php endif; ?>
+                <p class="text-with-underline ttd_nama" style="margin-bottom: -7px;">
+                    <?php echo $nama_ttd_bersangkuta; ?>
+                </p>
+                <p class="ttd_nama"><?php echo  $nip; ?></p>
+            </div>
+            <div class="signature-block right-signature">
+                <p class="tanggal"> <?php echo $tempat; ?>, <?php echo $tgl_bl_thn; ?> </p>
+                <?php if (!empty($upload_ttd)) : ?>
+                <img class="ttd_foto" src="<?php echo $upload_ttd; ?>" alt="Foto Tanda Tangan">
+                <?php endif; ?>
+                <p class="text-with-underline ttd_nama" style="margin-bottom: -7px;">
+                    <?php echo $nama_ttd_bersangkuta; ?>
+                </p>
+                <p class="ttd_nama"><?php echo  $nip; ?></p>
+            </div>
         </div>
+
         <div class="isi_surat">
             <p>Tembusan :
                 <br>Yth Kepala Kemenag Kabupaten Minahasa
             </p>
         </div>
 
+        <div class="signature-block right -signature">
+
+        </div>
         <div class="page-break"></div>
         <!-- SURAT PERNYATAAN PEMILIHAN SPESIALISASI -->
         <table style="width: 100%">
@@ -269,37 +554,40 @@ $user_id = $_SESSION['user_id'];
 
         <p style="text-align: justify;">
         <div class="biodata">
-            <div class="biodata-item">
-                <span class="biodata-label">Nama </span>
-                <span style="margin-left: 11rem;"> :</span>
-                <span class="biodata-value"> <?php echo $nama_pernyataan1; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Tempat tanggal lahir </span>
-                <span style="margin-left: 4rem;"> :</span>
-                <span class="biodata-value"><?php echo $tempat_tanggal_lahir_pernyataan1; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Pendidikan Terakhir </span>
-                <span style="margin-left: 4.3rem;"> :</span>
-                <span class="biodata-value"><?php echo  $pendidikan_terakhir_pernyataan1; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">No. Reg </span>
-                <span style="margin-left: 10rem;"> :</span>
-                <span class="biodata-value"><?php echo $noreg_pernyataan1; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Bidang tugas / spesialisasi </span>
-                <span style="margin-left: 1.5rem;"> :</span>
-                <span class="biodata-value"><?php echo $bidang_tugas_pernyataan1; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Alamat </span>
-                <span style="margin-left: 10.5rem;"> :</span>
-                <span class="biodata-value"><?php echo $alamat_pernyataan1; ?></span>
-            </div>
+            <table class="biodata-table">
+                <tr>
+                    <td class="biodata-label">Nama</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $nama_pernyataan1; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Tempat tanggal lahir</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $tempat_tanggal_lahir_pernyataan1; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Pendidikan Terakhir</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $pendidikan_terakhir_pernyataan1; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">No. Reg</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $noreg_pernyataan1; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Bidang tugas / spesialisasi</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $bidang_tugas_pernyataan1; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Alamat</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $alamat_pernyataan1; ?></td>
+                </tr>
+            </table>
         </div>
+
         </p>
         <div class="isi_surat">
             <p>Dengan ini menyatakan, memilih spesialisasi :</p>
@@ -411,28 +699,30 @@ $user_id = $_SESSION['user_id'];
         <p class="biodata">Yang bertanda tangan dibawah ini :</p>
         <p style="text-align: justify;">
         <div class="biodata">
-            <div class="biodata-item">
-                <span class="biodata-label">Nama </span>
-                <span style="margin-left: 10rem;"> :</span>
-                <span class="biodata-value"><?php echo $nama_pernyataan2; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Jabatan</span>
-                <span style="margin-left: 9.2rem;"> :</span>
-                <span class="biodata-value">Penyuluh Agama <?php echo $agama_pernyataan2; ?> Non PNS</span>
-            </div>
-
-            <div class="biodata-item">
-                <span class="biodata-label">Bidang tugas / spesialisasi </span>
-                <span style="margin-left: 1.4rem;"> :</span>
-                <span class="biodata-value"><?php echo $bidang_tugas_pernyataan2; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Alamat </span>
-                <span style="margin-left: 9.2rem;"> :</span>
-                <span class="biodata-value"><?php echo $alamat_pernyataan2; ?></span>
-            </div>
+            <table class="biodata-table">
+                <tr>
+                    <td class="biodata-label">Nama</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $nama_pernyataan2; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Jabatan</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value">Penyuluh Agama <?php echo $agama_pernyataan2; ?> Non PNS</td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Bidang tugas / spesialisasi</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $bidang_tugas_pernyataan2; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Alamat</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $alamat_pernyataan2; ?></td>
+                </tr>
+            </table>
         </div>
+
         <div class="isi_surat">
             <p>Menyatakan telah melaksanakan kunjungan dalam rangka koordinasi Penyuluh
                 Agama <?php echo $agama_pernyataan2; ?> kepada Tokoh Masyarakat dan Pejabat Pemerintah, sebagai berikut
@@ -455,11 +745,6 @@ $user_id = $_SESSION['user_id'];
             </ol>
             <p>Demikian Surat Tugas ini kami buat untuk dilaksanakan sebagaimana mestinya.</p>
         </div>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <br>
         <br>
         <div class="ttd">
@@ -574,28 +859,30 @@ $user_id = $_SESSION['user_id'];
         <p class="biodata">Yang bertanda tangan dibawah ini :</p>
         <p style="text-align: justify;">
         <div class="biodata">
-            <div class="biodata-item">
-                <span class="biodata-label">Nama </span>
-                <span style="margin-left: 10rem;"> :</span>
-                <span class="biodata-value"><?php echo $nama_pernyataan3; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Jabatan</span>
-                <span style="margin-left: 9.2rem;"> :</span>
-                <span class="biodata-value">Penyuluh Agama <?php echo $jabatan_pernyataan3; ?> Non PNS</span>
-            </div>
-
-            <div class="biodata-item">
-                <span class="biodata-label">Bidang tugas / spesialisasi </span>
-                <span style="margin-left: 1.4rem;"> :</span>
-                <span class="biodata-value"><?php echo $bidang_tugas_pernyataan3; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Alamat </span>
-                <span style="margin-left: 9.2rem;"> :</span>
-                <span class="biodata-value"><?php echo $alamat_pernyataan3; ?></span>
-            </div>
+            <table class="biodata-table">
+                <tr>
+                    <td class="biodata-label">Nama</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $nama_pernyataan3; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Jabatan</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value">Penyuluh Agama <?php echo $jabatan_pernyataan3; ?> Non PNS</td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Bidang tugas / spesialisasi</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $bidang_tugas_pernyataan3; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Alamat</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $alamat_pernyataan3; ?></td>
+                </tr>
+            </table>
         </div>
+
         </p>
         <div class="isi_surat">
             <p>Dengan ini menyatakan telah membentuk kelompok binaan sebagai berikut :</p>
@@ -715,37 +1002,40 @@ $user_id = $_SESSION['user_id'];
 
         <p style="text-align: justify;">
         <div class="biodata">
-            <div class="biodata-item">
-                <span class="biodata-label">Nama PAI Non PNS </span>
-                <span style="margin-left: 4.5rem;"> :</span>
-                <span class="biodata-value"> <?php echo $nama_pai; ?> </span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Jabatan </span>
-                <span style="margin-left: 10rem;"> :</span>
-                <span class="biodata-value"><?php echo $jabatan_pai; ?> </span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Bidang tugas / spesialisasi </span>
-                <span style="margin-left: 1.4rem;"> :</span>
-                <span class="biodata-value"><?php echo $bidang_tugas_pai; ?> </span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Kecamatan </span>
-                <span style="margin-left: 8.5rem;"> :</span>
-                <span class="biodata-value"><?php echo $bidang_tugas_pai; ?> </span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Kabupaten / Kota </span>
-                <span style="margin-left: 5.5rem;"> :</span>
-                <span class="biodata-value"><?php echo $kabupaten_pai; ?> </span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Provinsi </span>
-                <span style="margin-left: 10rem;"> :</span>
-                <span class="biodata-value"><?php echo $provinsi_pai; ?> </span>
-            </div>
+            <table class="biodata-table">
+                <tr>
+                    <td class="biodata-label">Nama PAI Non PNS</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $nama_pai; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Jabatan</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $jabatan_pai; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Bidang tugas / spesialisasi</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $bidang_tugas_pai; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Kecamatan</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $kecamatan_pai; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Kabupaten / Kota</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $kabupaten_pai; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Provinsi</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $provinsi_pai; ?></td>
+                </tr>
+            </table>
         </div>
+
         </p>
         <table class="custom-table">
             <tr>
@@ -837,31 +1127,35 @@ $user_id = $_SESSION['user_id'];
 
         <p style="text-align: justify;">
         <div class="biodata">
-            <div class="biodata-item">
-                <span class="biodata-label">Nama Kelompok </span>
-                <span> :</span> <?php echo $nama_penyuluh; ?> </span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Alamat </span>
-                <span> :</span>
-                <span class="biodata-value"><?php echo $alamat_penyuluh; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Bentuk Kegiatan </span>
-                <span> :</span>
-                <span class="biodata-value"><?php echo $kegiatan_penyuluh; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Judul / Topik </span>
-                <span> :</span>
-                <span class="biodata-value"><?php echo $topik_penyuluh; ?></span>
-            </div>
-            <div class="biodata-item">
-                <span class="biodata-label">Hari / Tanggal </span>
-                <span> :</span>
-                <span class="biodata-value"><?php echo $hari_penyuluh; ?></span>
-            </div>
+            <table class="biodata-table">
+                <tr>
+                    <td class="biodata-label">Nama Kelompok</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $nama_penyuluh; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Alamat</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $alamat_penyuluh; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Bentuk Kegiatan</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $kegiatan_penyuluh; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Judul / Topik</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $topik_penyuluh; ?></td>
+                </tr>
+                <tr>
+                    <td class="biodata-label">Hari / Tanggal</td>
+                    <td class="biodata-colon">:</td>
+                    <td class="biodata-value"><?php echo $hari_penyuluh; ?></td>
+                </tr>
+            </table>
         </div>
+
         </p>
         <table class="custom-table">
             <tr>
@@ -979,36 +1273,37 @@ $user_id = $_SESSION['user_id'];
         <p style="text-align: justify;">
         <div class="biodata">
             <div class="biodata-item">
-                <span class="biodata-label">Nama PAI Non PNS </span>
-                <span style="margin-left: 4.5rem;"> :</span>
+                <span class="biodata-label">Nama PAI Non PNS</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $nama_laporan_mingguan; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Jabatan </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Jabatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $jabatan_laporan_mingguan; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Bidang tugas / spesialisasi </span>
-                <span style="margin-left: 1.5rem;"> :</span>
+                <span class="biodata-label">Bidang tugas / spesialisasi</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $budang_tugas_mingguan; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Kecamatan </span>
-                <span style="margin-left: 8.5rem;"> :</span>
+                <span class="biodata-label">Kecamatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $kecamatan_laporan_mingguan; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Kabupaten / Kota </span>
-                <span style="margin-left: 5.5rem;"> :</span>
+                <span class="biodata-label">Kabupaten / Kota</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $kabupaten_laporan_mingguan; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Provinsi </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Provinsi</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $provinsi_laporan_mingguan; ?></span>
             </div>
         </div>
+
         </p>
 
         <table class="custom-table">
@@ -1124,36 +1419,37 @@ $user_id = $_SESSION['user_id'];
         <p style="text-align: justify;">
         <div class="biodata">
             <div class="biodata-item">
-                <span class="biodata-label">Nama PAI Non PNS </span>
-                <span style="margin-left: 4.5rem;"> :</span>
+                <span class="biodata-label">Nama PAI Non PNS</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $nama_laporan_mingguan2; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Jabatan </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Jabatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $jabatan_laporan_mingguan2; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Bidang tugas / spesialisasi </span>
-                <span style="margin-left: 1.5rem;"> :</span>
+                <span class="biodata-label">Bidang tugas / spesialisasi</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $budang_tugas_mingguan2; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Kecamatan </span>
-                <span style="margin-left: 8.5rem;"> :</span>
+                <span class="biodata-label">Kecamatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $kecamatan_laporan_mingguan2; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Kabupaten / Kota </span>
-                <span style="margin-left: 5.5rem;"> :</span>
+                <span class="biodata-label">Kabupaten / Kota</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $kabupaten_laporan_mingguan2; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Provinsi </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Provinsi</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $provinsi_laporan_mingguan2; ?></span>
             </div>
         </div>
+
         </p>
 
         <table class="custom-table">
@@ -1270,36 +1566,37 @@ $user_id = $_SESSION['user_id'];
         <p style="text-align: justify;">
         <div class="biodata">
             <div class="biodata-item">
-                <span class="biodata-label">Nama PAI Non PNS </span>
-                <span style="margin-left: 4.5rem;"> :</span>
+                <span class="biodata-label">Nama PAI Non PNS</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $nama_laporan_mingguan3; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Jabatan </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Jabatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $jabatan_laporan_mingguan3; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Bidang tugas / spesialisasi </span>
-                <span style="margin-left: 1.5rem;"> :</span>
+                <span class="biodata-label">Bidang tugas / spesialisasi</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $budang_tugas_mingguan3; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Kecamatan </span>
-                <span style="margin-left: 8.5rem;"> :</span>
+                <span class="biodata-label">Kecamatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $kecamatan_laporan_mingguan3; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Kabupaten / Kota </span>
-                <span style="margin-left: 5.5rem;"> :</span>
+                <span class="biodata-label">Kabupaten / Kota</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $kabupaten_laporan_mingguan3; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Provinsi </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Provinsi</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $provinsi_laporan_mingguan3; ?></span>
             </div>
         </div>
+
         </p>
 
         <table class="custom-table">
@@ -1417,36 +1714,37 @@ $user_id = $_SESSION['user_id'];
         <p style="text-align: justify;">
         <div class="biodata">
             <div class="biodata-item">
-                <span class="biodata-label">Nama PAI Non PNS </span>
-                <span style="margin-left: 4.5rem;"> :</span>
+                <span class="biodata-label">Nama PAI Non PNS</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $nama_laporan_mingguan4; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Jabatan </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Jabatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $jabatan_laporan_mingguan4; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Bidang tugas / spesialisasi </span>
-                <span style="margin-left: 1.5rem;"> :</span>
+                <span class="biodata-label">Bidang tugas / spesialisasi</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $budang_tugas_mingguan4; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Kecamatan </span>
-                <span style="margin-left: 8.5rem;"> :</span>
+                <span class="biodata-label">Kecamatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $kecamatan_laporan_mingguan4; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Kabupaten / Kota </span>
-                <span style="margin-left: 5.5rem;"> :</span>
+                <span class="biodata-label">Kabupaten / Kota</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $kabupaten_laporan_mingguan4; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Provinsi </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Provinsi</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $provinsi_laporan_mingguan4; ?></span>
             </div>
         </div>
+
         </p>
 
         <table class="custom-table">
@@ -1551,61 +1849,60 @@ $user_id = $_SESSION['user_id'];
         </table>
         <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
         <hr style="border: none; background-color: black; height: 1px; border-top: 2px solid black; margin: 2px 0;" />
-        <p style="text-align: center;" class="mt-3"><b>SURAT PERNYATAAN <br> MELAKUKAN KEGIATAN PENYULUHAN AGAMA
-                ISLAM</b></p>
+        <p style="text-align: center;" class="mt-3"><b>SURAT PERNYATAAN <br> MELAKUKAN KEGIATAN PENYULUHAN AGAMA</b></p>
 
         <p class="biodata">Yang bertanda tangan dibawah ini :</p>
         <p style="text-align: justify;">
         <div class="biodata">
             <div class="biodata-item">
-                <span class="biodata-label">Nama </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Nama</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $nama_penyuluh_agama_islam; ?></span>
             </div>
             <div class="biodata-item">
                 <span class="biodata-label">NIP</span>
-                <span style="margin-left: 11rem;"> :</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value">Penyuluh Agama <?php echo $nip_penyuluh_agama_islam; ?> Non PNS</span>
             </div>
-
             <div class="biodata-item">
                 <span class="biodata-label">Pangkat/Golongan</span>
-                <span style="margin-left: 3.8rem;"> :</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $pangkat_penyuluh_agama_islam; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Jabatan </span>
-                <span style="margin-left: 9rem;"> :</span>
+                <span class="biodata-label">Jabatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $jabatan_penyuluh_agama_islam; ?></span>
             </div>
         </div>
+
         </p>
 
         <p class="biodata mt-5">Menerangkan </p>
         <p style="text-align: justify;">
         <div class="biodata">
             <div class="biodata-item">
-                <span class="biodata-label">Nama </span>
-                <span style="margin-left: 10rem;"> :</span>
+                <span class="biodata-label">Nama</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $nama_menerangkan; ?></span>
             </div>
             <div class="biodata-item">
-                <span class="biodata-label">Jabatan </span>
-                <span style="margin-left: 9.2rem;"> :</span>
+                <span class="biodata-label">Jabatan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $jabatan_menerangkan; ?></span>
             </div>
             <div class="biodata-item">
                 <span class="biodata-label">Bidang Tugas Spesialisasi</span>
-                <span style="margin-left: 1.5rem;"> :</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value">Penyuluh Agama <?php echo $bidang_menerangkan; ?> Non PNS</span>
             </div>
-
             <div class="biodata-item">
-                <span class="biodata-label">Wilayah Penugasan </span>
-                <span style="margin-left: 4rem;"> :</span>
+                <span class="biodata-label">Wilayah Penugasan</span>
+                <span class="biodata-colon">:</span>
                 <span class="biodata-value"><?php echo $wilayah_menerangkan; ?></span>
             </div>
         </div>
+
         </p>
 
         <div class="isi_surat">
@@ -1628,48 +1925,75 @@ $user_id = $_SESSION['user_id'];
 
         <!-- DOKUMENTASI KEGIATAN -->
         <?php
-// Folder tujuan upload
-$uploadDir = 'upload/';
+            // Folder tujuan upload
+            $uploadDir = 'uploads/';
 
-// Membuat folder jika belum ada
-if (!is_dir($uploadDir)) {
-    mkdir($uploadDir, 0777, true);
-}
+            // Membuat folder jika belum ada
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0777, true);
+            }
 
-$files = ['kegiatan1', 'kegiatan2', 'kegiatan3', 'kegiatan4', 'kegiatan5', 'kegiatan6', 'kegiatan7', 'kegiatan8'];
-$uploadedFiles = [];
+            $files = ['kegiatan1', 'kegiatan2', 'kegiatan3', 'kegiatan4', 'kegiatan5', 'kegiatan6', 'kegiatan7', 'kegiatan8'];
+            $uploadedFiles = [];
 
-foreach ($files as $file) {
-    if (isset($_FILES[$file]) && $_FILES[$file]['error'] == UPLOAD_ERR_OK) {
-        $fileTmpPath = $_FILES[$file]['tmp_name'];
-        $fileName = $_FILES[$file]['name'];
-        $fileSize = $_FILES[$file]['size'];
-        $fileType = $_FILES[$file]['type'];
-        $fileNameCmps = explode(".", $fileName);
-        $fileExtension = strtolower(end($fileNameCmps));
+            foreach ($files as $file) {
+                if (isset($_FILES[$file]) && $_FILES[$file]['error'] == UPLOAD_ERR_OK) {
+                    $fileTmpPath = $_FILES[$file]['tmp_name'];
+                    $fileName = $_FILES[$file]['name'];
+                    $fileSize = $_FILES[$file]['size'];
+                    $fileType = $_FILES[$file]['type'];
+                    $fileNameCmps = explode(".", $fileName);
+                    $fileExtension = strtolower(end($fileNameCmps));
 
-        // Tentukan nama file yang unik
-        $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
+                    // Tentukan nama file yang unik
+                    $newFileName = md5(time() . $fileName) . '.' . $fileExtension;
 
-        $dest_path = $uploadDir . $newFileName;
+                    $dest_path = $uploadDir . $newFileName;
 
-        if(move_uploaded_file($fileTmpPath, $dest_path)) {
-            $uploadedFiles[$file] = $dest_path;
-        } else {
-            echo "There was an error moving the uploaded file.";
-        }
-    }
-}
-?>
-        <div class="page-break"> </div>
-        <p style="text-align: center;" class="mt-3 mb-5"><b>DOKUMENTASI KEGIATAN</b></p>
-        <div class="mx-auto max-w-4xl columns-2 gap-4">
+                    if(move_uploaded_file($fileTmpPath, $dest_path)) {
+                        $uploadedFiles[$file] = $dest_path;
+                    } else {
+                        echo "There was an error moving the uploaded file.";
+                    }
+                }
+            }
+            ?>
+        <div class="page-break"></div>
+        <p style="text-align: center;" class="mt-3"><b>DOKUMENTASI KEGIATAN</b></p>
+        <div class="image-container mx-auto max-w-4xl">
             <?php foreach ($uploadedFiles as $file): ?>
-            <img class="mb-4" src="<?php echo $file; ?>" alt="<?php echo basename($file); ?>">
+            <img src="<?php echo $file; ?>" alt="<?php echo basename($file); ?>">
             <?php endforeach; ?>
         </div>
 
 
+
 </body>
+
+<style>
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+}
+
+.image-container img {
+    width: calc(50% - 8px);
+    /* 50% of the container width minus the gap/2 */
+    height: auto;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.image-container');
+    const images = container.querySelectorAll('img');
+
+    images.forEach(image => {
+        image.style.width = 'calc(50% - 8px)';
+        image.style.height = 'auto';
+    });
+});
+</script>
 
 </html>

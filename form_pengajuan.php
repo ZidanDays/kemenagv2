@@ -92,6 +92,34 @@
                                         </div>
 
                                     </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="1nama_pengajuan_surat">Nama :</label>
+                                                <input class="form-control" id="1nama_pengajuan_surat"
+                                                    name="1nama_pengajuan_surat">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="1tahun_pengajuan_surat">Tahun :</label>
+                                                <input class="form-control" id="1tahun_pengajuan_surat"
+                                                    name="1tahun_pengajuan_surat">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="1wilayah_pengajuan_surat">Wilayah :</label>
+                                                <input class="form-control" id="1wilayah_pengajuan_surat"
+                                                    name="1wilayah_pengajuan_surat">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                 </div>
                             </div>
@@ -1418,7 +1446,7 @@
 
                                         </div>
                                         <hr style="border: none; border-bottom: 1px solid black; margin: 20px 0;">
-                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                                     </div>
                                 </div>
 
@@ -1545,7 +1573,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <hr style="border: none; border-bottom: 1px solid black; margin: 20px 0;">
+                                        <!-- <hr style="border: none; border-bottom: 1px solid black; margin: 20px 0;"> -->
 
                                     </div>
                                 </div>
@@ -1557,13 +1585,11 @@
 
                             <!-- DOKUMENTASI KEGIATAN-->
                             <div id="form12">
-
                                 <div class="card">
                                     <div class="card-header">
                                         <h5>DOKUMENTASI KEGIATAN</h5>
                                     </div>
                                     <div class="card-body">
-                                        <!-- <form> -->
                                         <div class="row">
                                             <div class="col-sm-6">
                                                 <div class="form-group">
@@ -1608,13 +1634,13 @@
                                                     <input type="file" class="form-control-file" id="kegiatan8"
                                                         name="kegiatan8" required>
                                                 </div>
-
                                             </div>
                                         </div>
                                         <hr style="border: none; border-bottom: 1px solid black; margin: 20px 0;">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                     </div>
                                 </div>
+                            </div>
             </form>
         </div>
 

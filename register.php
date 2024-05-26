@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Masukkan data ke tabel users
     $sql = "INSERT INTO users (username, email, password, full_name, role_id, religion) VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("ssssii", $username, $email, $password, $full_name, $role_id, $agama);
+    $stmt->bind_param("ssssss", $username, $email, $password, $full_name, $role_id, $agama);
 
     if ($stmt->execute()) {
         echo "Registrasi berhasil. <a href='auth-signin.php'>Login</a>";
@@ -74,7 +74,6 @@ $conn->close();
                                         <option value="hindu">Hindu</option>
                                     </select>
                                 </div>
-
                                 <div class="form-group mb-4">
                                     <input type="password" class="form-control" name="password" placeholder="Password"
                                         required>
@@ -84,33 +83,12 @@ $conn->close();
                                         required>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <select class="form-control" name="role" required readonly>
+                                    <select class="form-control" name="role" required>
                                         <option value="" disabled selected>Select Role</option>
                                         <option value="3">User</option>
-
-
-
-
-                                        <!-- <?php
-                                                // Koneksi ke database
-                                                $conn = new mysqli("localhost", "root", "", "kemenag");
-                                                if ($conn->connect_error) {
-                                                    die("Koneksi gagal: " . $conn->connect_error);
-                                                }
-
-                                                $sql = "SELECT id, role_name FROM roles";
-                                                $result = $conn->query($sql);
-
-                                                if ($result->num_rows > 0) {
-                                                    while ($row = $result->fetch_assoc()) {
-                                                        echo "<option value='" . $row['id'] . "'>" . $row['role_name'] . "</option>";
-                                                    }
-                                                }
-                                                $conn->close();
-                                                ?> -->
                                     </select>
                                 </div>
-                                <button type=" submit" class="btn btn-primary btn-block mb-4">Register</button>
+                                <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
                             </form>
                             <hr>
                             <p class="mb-2">Already have an account? <a href="auth-signin.php"
